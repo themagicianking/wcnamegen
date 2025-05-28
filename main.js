@@ -6,15 +6,15 @@ class Name {
     this.getPrefix()
     this.getSuffix()
     this.validate()
-    this.name = this.prefix + this.suffix
+    this.name =
+      (this.prefix + this.suffix).charAt(0).toUpperCase() +
+      (this.prefix + this.suffix).slice(1)
   }
 
   getPrefix(exclude = []) {
     let prefixes = [...PREFIXES.one, ...PREFIXES.two]
     if (exclude.length != 0) {
-      prefixes = prefixes.filter(
-        (prefix) => !exclude.includes(prefix.toLowerCase())
-      )
+      prefixes = prefixes.filter((prefix) => !exclude.includes(prefix))
     }
     let i = Math.floor(Math.random() * prefixes.length)
     this.prefix = prefixes[i]
@@ -27,7 +27,10 @@ class Name {
   }
 
   validate() {
-    let passedChecks = { duplicate: this.checkDuplicate() }
+    let passedChecks = {
+      duplicate: this.checkDuplicate(),
+      doubleAnimal: this.checkDoubleAnimal()
+    }
     if (Object.values(passedChecks).includes(false)) {
       console.log('revalidating!')
       this.validate()
@@ -35,10 +38,23 @@ class Name {
   }
 
   checkDuplicate() {
-    if (this.prefix.toLowerCase() == this.suffix) {
+    if (this.prefix == this.suffix) {
       console.log('This is a duplicate name:')
       console.log(this.prefix + this.suffix)
       this.getPrefix([this.suffix])
+      return false
+    } else {
+      return true
+    }
+  }
+
+  checkDoubleAnimal() {
+    if (
+      PREFIXES.animals.includes(this.prefix) &&
+      SUFFIXES.animals.includes(this.suffix)
+    ) {
+      console.log('Double animal: ' + this.prefix + this.suffix)
+      this.getPrefix(PREFIXES.animals)
       return false
     } else {
       return true
