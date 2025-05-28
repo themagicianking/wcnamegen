@@ -33,6 +33,7 @@ export const PREFIXES = {
     'stag',
     'storm',
     'sun',
+    'tall',
     'thyme',
     'trout',
     'web',
@@ -55,11 +56,16 @@ export const PREFIXES = {
     'lightning',
     'little',
     'mushroom',
+    'nectar',
     'otter',
+    'puddle',
     'rabbit',
     'running',
     'silver',
-    'viper'
+    'sparrow',
+    'spotted',
+    'viper',
+    'vixen'
   ],
   animals: [
     'adder',
@@ -77,9 +83,11 @@ export const PREFIXES = {
     'moose',
     'rabbit',
     'snake',
+    'sparrow',
     'stag',
     'trout',
     'viper',
+    'vixen',
     'wolf'
   ]
 }
@@ -87,27 +95,29 @@ export const PREFIXES = {
 export const SUFFIXES = {
   one: [
     'bird',
-    // 'blaze',
-    // 'branch',
-    // 'breeze',
-    // 'claw',
-    // 'cloud',
-    // 'dawn',
-    // 'fang',
-    // 'foot',
+    'blaze',
+    'branch',
+    'breeze',
+    'claw',
+    'cloud',
+    'dawn',
+    'fang',
+    'foot',
     'fox',
-    // 'fur',
-    // 'heart',
-    // 'leaf',
-    // 'leg',
-    // 'moon',
-    // 'pelt',
-    // 'rain',
-    // 'shine',
-    // 'stripe',
-    // 'stream',
-    // 'tail'
+    'fur',
+    'heart',
+    'leaf',
+    'leg',
+    'moon',
+    'pelt',
+    'rain',
+    'shine',
+    'stripe',
+    'stream',
+    'tail'
   ],
   two: ['dapple', 'feather', 'flower', 'runner', 'shadow', 'watcher'],
   animals: ['bird', 'fox']
 }
+
+export const BLACKLIST = ['moonshine']

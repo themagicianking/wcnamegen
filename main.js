@@ -1,4 +1,4 @@
-import { PREFIXES, SUFFIXES } from './dictionary.js'
+import { PREFIXES, SUFFIXES, BLACKLIST } from './dictionary.js'
 
 class Name {
   constructor(type) {
@@ -29,7 +29,8 @@ class Name {
   validate() {
     let passedChecks = {
       duplicate: this.checkDuplicate(),
-      doubleAnimal: this.checkDoubleAnimal()
+      doubleAnimal: this.checkDoubleAnimal(),
+      blacklist: this.checkBlackList()
     }
     if (Object.values(passedChecks).includes(false)) {
       console.log('revalidating!')
@@ -55,6 +56,15 @@ class Name {
     ) {
       console.log('Double animal: ' + this.prefix + this.suffix)
       this.getPrefix(PREFIXES.animals)
+      return false
+    } else {
+      return true
+    }
+  }
+
+  checkBlackList() {
+    if (BLACKLIST.includes(this.prefix + this.suffix)) {
+      this.getPrefix()
       return false
     } else {
       return true
