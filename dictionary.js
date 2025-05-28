@@ -13,7 +13,6 @@ export const PREFIXES = {
     'dawn',
     'deer',
     'doe',
-    'fall',
     'fox',
     'gray',
     'jay',
@@ -49,6 +48,7 @@ export const PREFIXES = {
     'apple',
     'badger',
     'beetle',
+    'clover',
     'dapple',
     'feather',
     'heather',
@@ -65,7 +65,8 @@ export const PREFIXES = {
     'sparrow',
     'spotted',
     'viper',
-    'vixen'
+    'vixen',
+    'willow'
   ],
   animals: [
     'adder',
@@ -101,6 +102,7 @@ export const SUFFIXES = {
     'claw',
     'cloud',
     'dawn',
+    'fall',
     'fang',
     'foot',
     'fox',

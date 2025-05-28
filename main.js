@@ -30,7 +30,8 @@ class Name {
     let passedChecks = {
       duplicate: this.checkDuplicate(),
       doubleAnimal: this.checkDoubleAnimal(),
-      blacklist: this.checkBlackList()
+      blacklist: this.checkBlackList(),
+      tripleLetters: this.checkTripleLetters()
     }
     if (Object.values(passedChecks).includes(false)) {
       console.log('revalidating!')
@@ -62,6 +63,18 @@ class Name {
     }
   }
 
+  checkTripleLetters() {
+    let regex = new RegExp('([a-z])\\1\\1')
+    if ((this.prefix + this.suffix).match(regex)) {
+      console.log('Triple letter detected.')
+      console.log(this.prefix + this.suffix)
+      this.getPrefix()
+      return false
+    } else {
+      return true
+    }
+  }
+
   checkBlackList() {
     if (BLACKLIST.includes(this.prefix + this.suffix)) {
       this.getPrefix()
@@ -72,12 +85,6 @@ class Name {
   }
 }
 
-function getTenNames() {
-  for (let i = 0; i < 10; i++) {
-    console.log(new Name(0).name)
-  }
-}
-
 function getName() {
   return new Name(0).name
 }
@@ -85,7 +92,19 @@ function getName() {
 // getTenNames()
 
 const generate = document.getElementById('generate')
+const generateTen = document.getElementById('generateTen')
 const name = document.getElementById('name')
+const nameList = document.getElementById('nameList')
 generate.addEventListener('click', () => {
+  nameList.textContent = ''
   name.textContent = getName()
+})
+generateTen.addEventListener('click', () => {
+  nameList.textContent = ''
+  name.textContent = ''
+  for (let i = 0; i < 10; i++) {
+    let nameItem = document.createElement('li')
+    nameItem.textContent = getName()
+    nameList.appendChild(nameItem)
+  }
 })
