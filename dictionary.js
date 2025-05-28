@@ -7,18 +7,28 @@ export const PREFIXES = [
   'Antler',
   'Apple',
   'Ash',
-  'Badger'
+  'Badger',
+  'Bird',
+  'Breeze',
+  'Cloud',
+  'Dawn',
+  'Leaf',
+  'Moon'
 ]
 
-export const SUFFIXES = [
-  'bird',
-  'blaze',
-  'branch',
-  'breeze',
-  'claw',
-  'cloud',
-  'feather',
-  'fur',
-  'moon',
-  'pelt'
-]
+export const SUFFIXES = {
+  one: [
+    'bird',
+    'blaze',
+    'branch',
+    'breeze',
+    'claw',
+    'cloud',
+    'dawn',
+    'fur',
+    'leaf',
+    'moon',
+    'pelt'
+  ],
+  two: ['feather']
+}

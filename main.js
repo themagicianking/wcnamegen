@@ -5,6 +5,7 @@ class Name {
     this.type = type
     this.getPrefix()
     this.getSuffix()
+    this.validate()
     this.name = this.prefix + this.suffix
   }
 
@@ -14,8 +15,21 @@ class Name {
   }
 
   getSuffix() {
-    let i = Math.floor(Math.random() * PREFIXES.length)
-    this.suffix = SUFFIXES[i]
+    let allSuffixes = [...SUFFIXES.one, ...SUFFIXES.two]
+    let i = Math.floor(Math.random() * allSuffixes.length)
+    this.suffix = allSuffixes[i]
+  }
+
+  validate() {
+    this.checkDuplicate()
+  }
+
+  checkDuplicate() {
+    if (this.prefix.toLowerCase() == this.suffix) {
+      console.log("This is a duplicate name:")
+      console.log(this.prefix + this.suffix)
+      this.getPrefix()
+    }
   }
 }
 
