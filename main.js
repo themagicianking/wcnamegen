@@ -46,11 +46,20 @@ class Name {
   }
 }
 
-let example_name = new Name(0)
-
 function getTenNames() {
   for (let i = 0; i < 10; i++) {
     console.log(new Name(0).name)
   }
 }
-getTenNames()
+
+function getName() {
+  return new Name(0).name
+}
+
+// getTenNames()
+
+const generate = document.getElementById('generate')
+const name = document.getElementById('name')
+generate.addEventListener('click', () => {
+  name.textContent = getName()
+})
