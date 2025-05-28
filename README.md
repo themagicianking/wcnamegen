@@ -10,7 +10,7 @@ The rules this generator abides by are somewhat arbitrary and I am sure somewhat
 
 1. Only naturalistic name parts are used, so no kittypet clause to allow something like Harveymoon.
 2. No names with the same prefix and suffix.
-3. No names longer than six syllables (the longest possible canon name is Dandelionblossom, which is six syllables).
+3. No names longer than four syllables (the longest POV character's name, in syllables, is Goldenflower--I think anything longer than this gets unwieldy).
 4. No prefixes using the original clan leader's names, so no Thunder-, Wind-, Shadow-, River-, or Sky-.
 5. No prefixes using position-indicative suffix words, so no Paw-, Star-, or Kit-.
 6. Letters may not repeat more than twice (no Mossshade).

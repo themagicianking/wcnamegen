@@ -1,4 +1,4 @@
-const PREFIXES = [
+export const PREFIXES = [
   'Acorn',
   'Adder',
   'Alder',
@@ -10,7 +10,7 @@ const PREFIXES = [
   'Badger'
 ]
 
-const SUFFIXES = [
+export const SUFFIXES = [
   'bird',
   'blaze',
   'branch',
