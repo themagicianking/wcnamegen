@@ -1,34 +1,41 @@
-export const PREFIXES = [
-  'Acorn',
-  'Adder',
-  'Alder',
-  'Amber',
-  'Ant',
-  'Antler',
-  'Apple',
-  'Ash',
-  'Badger',
-  'Bird',
-  'Breeze',
-  'Cloud',
-  'Dawn',
-  'Leaf',
-  'Moon'
-]
+export const PREFIXES = {
+  one: [
+    // 'Ant',
+    // 'Ash',
+    'Bird',
+    'Breeze',
+    'Cloud',
+    'Dawn',
+    'Leaf',
+    'Moon',
+    'Rain'
+  ],
+  two: [
+    // 'Acorn',
+    // 'Adder',
+    // 'Alder',
+    // 'Amber',
+    // 'Antler',
+    // 'Apple',
+    // 'Badger',
+    // 'Beetle'
+  ]
+}
 
 export const SUFFIXES = {
   one: [
     'bird',
-    'blaze',
-    'branch',
+    // 'blaze',
+    // 'branch',
     'breeze',
-    'claw',
+    // 'claw',
     'cloud',
     'dawn',
-    'fur',
+    // 'fur',
     'leaf',
     'moon',
-    'pelt'
+    // 'pelt',
+    'rain'
   ],
   two: ['feather']
 }

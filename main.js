@@ -9,9 +9,15 @@ class Name {
     this.name = this.prefix + this.suffix
   }
 
-  getPrefix() {
-    let i = Math.floor(Math.random() * PREFIXES.length)
-    this.prefix = PREFIXES[i]
+  getPrefix(exclude = []) {
+    let prefixes = [...PREFIXES.one, ...PREFIXES.two]
+    if (exclude.length != 0) {
+      prefixes = prefixes.filter(
+        (prefix) => !exclude.includes(prefix.toLowerCase())
+      )
+    }
+    let i = Math.floor(Math.random() * prefixes.length)
+    this.prefix = prefixes[i]
   }
 
   getSuffix() {
@@ -21,18 +27,30 @@ class Name {
   }
 
   validate() {
-    this.checkDuplicate()
+    let passedChecks = { duplicate: this.checkDuplicate() }
+    if (Object.values(passedChecks).includes(false)) {
+      console.log('revalidating!')
+      this.validate()
+    }
   }
 
   checkDuplicate() {
     if (this.prefix.toLowerCase() == this.suffix) {
-      console.log("This is a duplicate name:")
+      console.log('This is a duplicate name:')
       console.log(this.prefix + this.suffix)
-      this.getPrefix()
+      this.getPrefix([this.suffix])
+      return false
+    } else {
+      return true
     }
   }
 }
 
 let example_name = new Name(0)
 
-console.log(example_name.name)
+function getTenNames() {
+  for (let i = 0; i < 10; i++) {
+    console.log(new Name(0).name)
+  }
+}
+getTenNames()
